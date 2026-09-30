@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 340" width="200" height="340">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0f3c86"/><stop offset=".14" stop-color="#1d5fc4"/>
+      <stop offset=".42" stop-color="#63a6ff"/><stop offset=".55" stop-color="#8dc0ff"/>
+      <stop offset=".86" stop-color="#2f7cf6"/><stop offset="1" stop-color="#0c2f6d"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a1a2e"/><stop offset=".5" stop-color="#16324f"/><stop offset="1" stop-color="#0a1a2e"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="176" rx="86" ry="150" fill="#000" opacity=".28"/>
+  <g fill="#14161c">
+    <rect x="16" y="66" width="26" height="52" rx="7"/><rect x="158" y="66" width="26" height="52" rx="7"/>
+    <rect x="16" y="232" width="26" height="56" rx="7"/><rect x="158" y="232" width="26" height="56" rx="7"/>
+  </g>
+  <g fill="#2c3038">
+    <rect x="20" y="72" width="18" height="40" rx="5"/><rect x="162" y="72" width="18" height="40" rx="5"/>
+    <rect x="20" y="238" width="18" height="44" rx="5"/><rect x="162" y="238" width="18" height="44" rx="5"/>
+  </g>
+  <path d="M100 18C132 18 154 30 166 52c10 20 14 56 14 108v80c0 54-30 80-80 80s-80-26-80-80v-80c0-52 4-88 14-108C46 30 68 18 100 18z" fill="url(#b)" stroke="#0a1c3a" stroke-width="2"/>
+  <path d="M100 30c-16 0-26 10-30 26h60c-4-16-14-26-30-26z" fill="#9fd0ff" opacity=".55"/>
+  <path d="M100 66c19 0 31 14 33 34l1 62c0 22-13 38-34 38s-34-16-34-38l1-62c2-20 14-34 33-34z" fill="url(#g)"/>
+  <path d="M74 112c8-9 17-13 26-13s18 4 26 13l-3 46c-7 8-14 12-23 12s-16-4-23-12z" fill="#0d2038" opacity=".85"/>
+  <rect x="96" y="18" width="8" height="300" fill="#9fd0ff" opacity=".38"/>
+  <g fill="#e8eefc">
+    <path d="M44 46c8-8 18-12 30-13l-4 16c-10 1-18 4-24 9z"/>
+    <path d="M156 46c-8-8-18-12-30-13l4 16c10 1 18 4 24 9z"/>
+  </g>
+  <g fill="#e5484d">
+    <rect x="42" y="292" width="42" height="9" rx="4"/><rect x="116" y="292" width="42" height="9" rx="4"/>
+  </g>
+  <g fill="#0b1020" opacity=".85">
+    <rect x="24" y="150" width="12" height="42" rx="6"/><rect x="164" y="150" width="12" height="42" rx="6"/>
+  </g>
+  <rect x="58" y="288" width="84" height="22" rx="9" fill="#0d1524" opacity=".8"/>
+  <g fill="#c9d6ee"><circle cx="70" cy="299" r="4"/><circle cx="130" cy="299" r="4"/></g>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 340" width="200" height="340">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8a2f00"/><stop offset=".14" stop-color="#d95a06"/>
+      <stop offset=".42" stop-color="#ff9a3c"/><stop offset=".55" stop-color="#ffc98a"/>
+      <stop offset=".86" stop-color="#ff7a1a"/><stop offset="1" stop-color="#7d2a00"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a0c04"/><stop offset=".5" stop-color="#3a1c0a"/><stop offset="1" stop-color="#1a0c04"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="176" rx="88" ry="152" fill="#000" opacity=".3"/>
+  <g fill="#14161c">
+    <rect x="12" y="62" width="30" height="56" rx="8"/><rect x="158" y="62" width="30" height="56" rx="8"/>
+    <rect x="12" y="236" width="30" height="60" rx="8"/><rect x="158" y="236" width="30" height="60" rx="8"/>
+  </g>
+  <g fill="#2c3038">
+    <rect x="16" y="68" width="22" height="44" rx="6"/><rect x="162" y="68" width="22" height="44" rx="6"/>
+    <rect x="16" y="242" width="22" height="48" rx="6"/><rect x="162" y="242" width="22" height="48" rx="6"/>
+  </g>
+  <path d="M100 16c31 0 54 12 67 35 11 20 15 58 15 112v76c0 57-32 84-82 84s-82-27-82-84v-76c0-54 4-92 15-112C46 28 69 16 100 16z" fill="url(#b)" stroke="#6d2400" stroke-width="2"/>
+  <path d="M100 26c-19 0-31 9-37 25h74c-6-16-18-25-37-25z" fill="#ffd7a8" opacity=".5"/>
+  <path d="M100 60c22 0 35 14 37 37l1 60c0 25-15 43-38 43s-38-18-38-43l1-60c2-23 15-37 37-37z" fill="url(#g)"/>
+  <path d="M70 106c10-10 20-15 30-15s20 5 30 15l-5 50c-7 9-16 13-25 13s-18-4-25-13z" fill="#241006" opacity=".85"/>
+  <g fill="#3a1c0a" opacity=".8">
+    <rect x="78" y="34" width="12" height="34" rx="5"/><rect x="110" y="34" width="12" height="34" rx="5"/>
+    <rect x="78" y="240" width="12" height="40" rx="5"/><rect x="110" y="240" width="12" height="40" rx="5"/>
+  </g>
+  <g fill="#fff4e6">
+    <path d="M40 42c10-10 22-14 34-15l-5 18c-11 1-21 5-27 11z"/>
+    <path d="M160 42c-10-10-22-14-34-15l5 18c11 1 21 5 27 11z"/>
+  </g>
+  <g fill="#e5484d">
+    <rect x="38" y="288" width="46" height="10" rx="5"/><rect x="116" y="288" width="46" height="10" rx="5"/>
+  </g>
+  <g fill="#5c1f00" opacity=".85">
+    <path d="M18 138h18v54H18z"/><path d="M182 138h-18v54h18z"/>
+  </g>
+  <rect x="52" y="284" width="96" height="26" rx="11" fill="#2a1206" opacity=".85"/>
+  <g fill="#ffd7a8"><circle cx="68" cy="297" r="4"/><circle cx="132" cy="297" r="4"/></g>
+  <rect x="16" y="272" width="168" height="14" rx="7" fill="#1d0d04"/>
+  <rect x="24" y="262" width="10" height="16" rx="4" fill="#1d0d04"/><rect x="166" y="262" width="10" height="16" rx="4" fill="#1d0d04"/>
+</svg>

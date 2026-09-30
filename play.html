@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Race — VSCARZ</title>
+<meta name="theme-color" content="#05060c">
+<link rel="icon" href="assets/logo.svg">
+<link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+
+<div id="stage">
+  <canvas id="cv"></canvas>
+
+  <!-- ================= HUD ================= -->
+  <div class="ui" id="hud">
+    <div class="hud-tl">
+      <div class="lname" id="hLvName">Track</div>
+      <div class="lsub" id="hLvSub">0 / 0 m</div>
+      <div class="pbar" id="hPbar"><i style="width:0%"></i></div>
+    </div>
+
+    <div class="hud-tc">
+      <div class="score" id="hScore">0</div>
+      <div class="scoreLbl">SCORE</div>
+      <div class="combo" id="hCombo">COMBO x1.0</div>
+    </div>
+
+    <div class="hud-tr">
+      <button class="iconbtn" id="bMute" title="Mute (M)">🔊</button>
+      <button class="iconbtn" id="bPause" title="Pause (Esc)">⏸</button>
+      <button class="iconbtn" id="bQuit" title="Garage">✕</button>
+    </div>
+
+    <div class="hud-bl">
+      <div class="speedo">
+        <svg viewBox="0 0 120 120">
+          <defs>
+            <linearGradient id="spdgrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00e5ff"/><stop offset=".55" stop-color="#7b5cff"/><stop offset="1" stop-color="#ff2e93"/>
+            </linearGradient>
+          </defs>
+          <circle class="trk" cx="60" cy="60" r="48" stroke-dasharray="226 302"/>
+          <circle class="val" id="hArc" cx="60" cy="60" r="48" stroke-dasharray="0 302"/>
+        </svg>
+        <div class="num"><span id="hSpeed">0</span><small>KM/H</small></div>
+      </div>
+      <div class="stat">
+        <div class="k">DRIFT</div>
+        <div class="v" id="hDrift">0</div>
+        <div class="k" style="margin-top:10px">TIME</div>
+        <div class="v" id="hTime">0:00.00</div>
+      </div>
+    </div>
+
+    <div class="hud-br">
+      <div class="money"><span class="k">RUN POINTS</span><span class="v" id="hPts">0</span></div>
+      <div class="meter">
+        <div class="row"><span>NITRO</span><span id="hNitroTxt">100%</span></div>
+        <div class="t"><i id="nitroFill" style="width:100%"></i></div>
+      </div>
+      <div class="meter">
+        <div class="row"><span>BODY</span><span id="hHpTxt">100%</span></div>
+        <div class="t"><i id="hpFill" style="width:100%"></i></div>
+      </div>
+    </div>
+
+    <div class="centre" id="centre" style="display:none">
+      <div class="big" id="cBig">3</div>
+      <div class="submsg" id="cSub"></div>
+    </div>
+  </div>
+
+  <!-- ================= TOUCH ================= -->
+  <div class="touch" id="touch">
+    <div class="tb l" data-k="left">◀</div>
+    <div class="tb r" data-k="right">▶</div>
+    <div class="tb g" data-k="gas">▲</div>
+    <div class="tb b" data-k="brake">▼</div>
+    <div class="tb n" data-k="nitro">N2O</div>
+    <div class="tb d" data-k="drift">DRIFT</div>
+  </div>
+
+  <!-- ================= START ================= -->
+  <div class="overlay on" id="ovStart">
+    <div class="sheet">
+      <div class="eyebrow" style="font-size:calc(12px * var(--s));letter-spacing:.24em;color:var(--cyan);font-weight:800">CHOOSE YOUR TRACK</div>
+      <h1>VSCARZ <span class="g">RACE</span></h1>
+      <div class="carline">
+        <img id="stCarImg" src="assets/cars/swift.svg" alt="">
+        <div class="txt"><b id="stCarName">VSCARZ Swift</b><div id="stCarTier">Starter · 188 km/h</div></div>
+      </div>
+      <div class="lvpick" id="lvPick"></div>
+      <div class="btns">
+        <button class="btn pri" id="bStart">▶ Start Race</button>
+        <button class="btn" id="bGarage">🛠 Garage</button>
+        <button class="btn" id="bHome">Home</button>
+      </div>
+      <p class="tip"><kbd>W</kbd><kbd>↑</kbd> throttle · <kbd>A</kbd><kbd>D</kbd> steer · <kbd>Shift</kbd> nitro · <kbd>Space</kbd> drift · <kbd>R</kbd> restart · <kbd>Esc</kbd> pause</p>
+    </div>
+  </div>
+
+  <!-- ================= PAUSE ================= -->
+  <div class="overlay" id="ovPause">
+    <div class="sheet">
+      <h1>PAUSED</h1>
+      <p class="lead">Take a breath. The clock is stopped.</p>
+      <div class="btns">
+        <button class="btn pri" id="bResume">▶ Resume</button>
+        <button class="btn" id="bRestart">↻ Restart</button>
+        <button class="btn" id="bQuit2">Quit to menu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= RESULT ================= -->
+  <div class="overlay" id="ovEnd">
+    <div class="sheet">
+      <h1 id="eTitle">FINISH</h1>
+      <p class="lead" id="eSub">Track complete</p>
+      <div class="res" id="eRes"></div>
+      <div id="eLevel"></div>
+      <div class="btns">
+        <button class="btn pri" id="bAgain">↻ Race again</button>
+        <button class="btn" id="bNext">Next track ▶</button>
+        <button class="btn" id="bGarage2">🛠 Garage</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="rotate">
+  <div>
+    <div class="ic">📱</div>
+    <h2>Turn your phone sideways</h2>
+    <p>VSCARZ runs in landscape. Rotate the device to get the full track on screen.</p>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/save.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

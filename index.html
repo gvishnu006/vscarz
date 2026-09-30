@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VSCARZ — Land Racing</title>
+<meta name="description" content="VSCARZ — a land racing game. Drift, boost, level up, and buy supercars with the points you earn.">
+<meta name="theme-color" content="#05060c">
+<link rel="icon" href="assets/logo.svg">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt=""><span>VSCARZ</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="on">Home</a>
+      <a href="#cars">Cars</a>
+      <a href="#tracks">Levels</a>
+      <a href="#controls">Controls</a>
+      <a href="garage.html">Garage</a>
+    </div>
+    <a class="pill" href="garage.html">Points <b id="navPts">0</b></a>
+    <a class="btn btn-primary" href="play.html">PLAY</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="hudbar" id="hudbar"></div>
+</div>
+
+<header class="wrap hero">
+  <canvas id="roadfx"></canvas>
+  <div>
+    <span class="tag"><i></i> Season 1 · Live</span>
+    <h1>OWN THE<br><span class="g">ASPHALT.</span></h1>
+    <p class="lead">
+      VSCARZ is a land racing game built around one thing — the drive. Eight hand-tuned
+      tracks, six machines, real drift physics and a nitro meter that rewards the brave.
+      Win points, level up your driver rank, and buy the cars you actually want.
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary" href="play.html">▶ Start Racing</a>
+      <a class="btn btn-ghost" href="garage.html">🛠 Open Garage</a>
+    </div>
+    <div class="mini">
+      <div><div class="n" id="sTracks">8</div><div class="l">Tracks</div></div>
+      <div><div class="n" id="sCars">6</div><div class="l">Cars</div></div>
+      <div><div class="n" id="sLv">Lv 1</div><div class="l">Your Rank</div></div>
+      <div><div class="n" id="sPts">0</div><div class="l">Points</div></div>
+    </div>
+  </div>
+  <div class="stage">
+    <div class="stage-glow"></div>
+    <div class="car3d"><img src="assets/cars/hyperion.svg" alt="VSCARZ Hyperion S"></div>
+    <div class="floor"></div>
+  </div>
+</header>
+
+<div class="ticker" id="ticker"></div>
+
+<!-- ================= FEATURES ================= -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">The Game</div>
+        <h2>Everything that makes<br>a racer worth coming back to</h2>
+      </div>
+      <p>No pay-to-win, no energy timers. You earn every car in the garage by driving well.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card"><div class="ico">🏁</div><h3>Real Driving Feel</h3><p>Weight transfer, grip loss under handbrake, centrifugal push through corners, off-road drag. The car has to be driven, not just steered.</p></div>
+      <div class="card"><div class="ico">🔥</div><h3>Nitro &amp; Drift Scoring</h3><p>Hold Shift to boost. Tap Space to kick the rear out. Drifts and near-misses build a combo multiplier that multiplies every point.</p></div>
+      <div class="card"><div class="ico">📈</div><h3>Rank Up, Earn Points</h3><p>Every metre, drift and near-miss pays. Points spend in the garage. XP raises your driver rank and unlocks the harder tracks.</p></div>
+      <div class="card"><div class="ico">🛒</div><h3>6 Cars, 3 Tiers</h3><p>A free starter, three Pro machines, two Legend supercars. Each one changes how the car behaves — grip, punch, or top end.</p></div>
+      <div class="card"><div class="ico">🌧️</div><h3>8 Themed Tracks</h3><p>Desert dawn, neon city, rain forest, mountain pass, a storm highway, canyon run and the VSCARZ Grand Prix finale.</p></div>
+      <div class="card"><div class="ico">📱</div><h3>Keyboard or Touch</h3><p>Full WASD / arrow support with a mobile touch pad. Same physics, same scores, on any screen.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CARS ================= -->
+<section class="block" id="cars" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">The Lineup</div>
+        <h2>Six machines.<br>Zero handouts.</h2>
+      </div>
+      <p>You start with the Swift and nothing else. Every other car is bought with points you earn on track.</p>
+    </div>
+    <div class="grid g3" id="carGrid"></div>
+    <div style="margin-top:28px"><a class="btn btn-ghost" href="garage.html">View full garage →</a></div>
+  </div>
+</section>
+
+<!-- ================= TRACKS ================= -->
+<section class="block" id="tracks" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Career</div>
+        <h2>Eight tracks.<br>One Grand Prix.</h2>
+      </div>
+      <p>Each track has its own weather, palette, traffic density and point reward. Higher ranks unlock the later stages.</p>
+    </div>
+    <div class="grid g2" id="trackGrid"></div>
+  </div>
+</section>
+
+<!-- ================= CONTROLS ================= -->
+<section class="block" id="controls" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Controls</div>
+        <h2>Learn it in ten seconds</h2>
+      </div>
+      <p>Keyboard and gamepad-friendly key bindings. On mobile, use the on-screen pad.</p>
+    </div>
+    <div class="keys" id="keyGrid">
+      <div class="card keyc"><kbd>W</kbd><kbd>↑</kbd><div class="t">Throttle</div><div class="d">Hold to accelerate</div></div>
+      <div class="card keyc"><kbd>S</kbd><kbd>↓</kbd><div class="t">Brake</div><div class="d">Slow down, reverse</div></div>
+      <div class="card keyc"><kbd>A</kbd><kbd>D</kbd><div class="t">Steer</div><div class="d">Left / right</div></div>
+      <div class="card keyc"><kbd>Shift</kbd><div class="t">Nitro</div><div class="d">Boost, drains the bar</div></div>
+      <div class="card keyc"><kbd>Space</kbd><div class="t">Drift</div><div class="d">Handbrake — kicks the tail out</div></div>
+      <div class="card keyc"><kbd>R</kbd><div class="t">Restart</div><div class="d">Retry the run instantly</div></div>
+      <div class="card keyc"><kbd>Esc</kbd><div class="t">Pause</div><div class="d">Freeze the race</div></div>
+      <div class="card keyc"><kbd>M</kbd><div class="t">Mute</div><div class="d">Toggle engine audio</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROGRESSION ================= -->
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Progression</div>
+        <h2>How you climb</h2>
+      </div>
+      <p>Points and XP are both earned every run, but they do different jobs — one spends, one levels.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>Scoring in a run</h3>
+        <div class="steps" style="margin-top:18px">
+          <div class="step"><div><h3>Distance</h3><p>Points for every metre covered on the road. Off-road metres pay far less.</p></div></div>
+          <div class="step"><div><h3>Drift</h3><p>Hold a slide to bank points per second. The longer and faster the drift, the more it pays.</p></div></div>
+          <div class="step"><div><h3>Near miss</h3><p>Squeeze past traffic and barriers for a bonus plus a combo bump.</p></div></div>
+          <div class="step"><div><h3>Checkpoints &amp; clean finish</h3><p>Each checkpoint pays out, and finishing with health left adds a large bonus.</p></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Spending &amp; levelling</h3>
+        <div class="steps" style="margin-top:18px">
+          <div class="step"><div><h3>Points → Garage</h3><p>Points are the currency. Buy a car once and it stays in your garage forever.</p></div></div>
+          <div class="step"><div><h3>XP → Driver Rank</h3><p>XP raises your rank: Rookie all the way to VSCARZ Champion. Ranks are permanent.</p></div></div>
+          <div class="step"><div><h3>Rank → Tracks</h3><p>Each track needs a minimum rank. Rank 12 opens the Grand Prix finale.</p></div></div>
+          <div class="step"><div><h3>Records</h3><p>Your best score per track and per car is stored, so you always know the number to beat.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band">
+      <div class="eyebrow">Ready?</div>
+      <h2>Your first car is waiting.</h2>
+      <p>No download, no account, no install. Open it in a browser and drive.</p>
+      <a class="btn btn-primary" href="play.html">▶ Drive Now</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand" style="font-size:15px"><img src="assets/logo.svg" alt=""><span>VSCARZ</span></div>
+    <div>Land Racing · Built with plain HTML, CSS and Canvas</div>
+    <div>Progress saved locally in your browser</div>
+  </div>
+</footer>
+
+<div id="toast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/save.js"></script>
+<script src="js/site.js"></script>
+<script src="js/landing.js"></script>
+</body>
+</html>

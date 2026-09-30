@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 340" width="200" height="340">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#075a4c"/><stop offset=".14" stop-color="#0e8f74"/>
+      <stop offset=".42" stop-color="#2fe0b8"/><stop offset=".55" stop-color="#7cf7da"/>
+      <stop offset=".86" stop-color="#17c9a3"/><stop offset="1" stop-color="#064c40"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#07171a"/><stop offset=".5" stop-color="#0f2f33"/><stop offset="1" stop-color="#07171a"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="176" rx="86" ry="150" fill="#000" opacity=".28"/>
+  <g fill="#14161c">
+    <rect x="14" y="64" width="28" height="54" rx="8"/><rect x="158" y="64" width="28" height="54" rx="8"/>
+    <rect x="14" y="234" width="28" height="58" rx="8"/><rect x="158" y="234" width="28" height="58" rx="8"/>
+  </g>
+  <g fill="#2c3038">
+    <rect x="18" y="70" width="20" height="42" rx="6"/><rect x="162" y="70" width="20" height="42" rx="6"/>
+    <rect x="18" y="240" width="20" height="46" rx="6"/><rect x="162" y="240" width="20" height="46" rx="6"/>
+  </g>
+  <path d="M100 16c30 0 52 12 65 34 11 20 15 58 15 112v78c0 56-31 82-80 82s-80-26-80-82v-78c0-54 4-92 15-112 13-22 35-34 65-34z" fill="url(#b)" stroke="#04352c" stroke-width="2"/>
+  <path d="M100 26c-18 0-30 9-36 24h72c-6-15-18-24-36-24z" fill="#b6fff0" opacity=".5"/>
+  <path d="M100 62c21 0 34 14 36 36l1 58c0 24-14 42-37 42s-37-18-37-42l1-58c2-22 15-36 36-36z" fill="url(#g)"/>
+  <path d="M72 108c9-10 19-14 28-14s19 4 28 14l-4 48c-7 9-15 13-24 13s-17-4-24-13z" fill="#082024" opacity=".85"/>
+  <g fill="#b6fff0" opacity=".75">
+    <path d="M62 34h14l-4 130h-10z"/><path d="M138 34h-14l4 130h10z"/>
+  </g>
+  <g fill="#f2fffb">
+    <path d="M42 44c9-9 20-13 32-14l-4 17c-11 1-20 4-26 10z"/>
+    <path d="M158 44c-9-9-20-13-32-14l4 17c11 1 20 4 26 10z"/>
+  </g>
+  <g fill="#ff5470">
+    <rect x="40" y="290" width="44" height="9" rx="4"/><rect x="116" y="290" width="44" height="9" rx="4"/>
+  </g>
+  <g fill="#062a24" opacity=".85">
+    <path d="M20 140h16v50H20z"/><path d="M180 140h-16v50h16z"/>
+  </g>
+  <rect x="54" y="286" width="92" height="24" rx="10" fill="#07201f" opacity=".82"/>
+  <g fill="#b6fff0"><circle cx="70" cy="298" r="4"/><circle cx="130" cy="298" r="4"/></g>
+  <rect x="86" y="300" width="28" height="10" rx="5" fill="#0a3730"/>
+</svg>
